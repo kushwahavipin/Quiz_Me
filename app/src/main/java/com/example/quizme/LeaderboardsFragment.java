@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.quizme.databinding.FragmentLeaderboardsBinding;
+import com.example.quizme.databinding.FragmentWalletBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuthSettings;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -36,6 +38,8 @@ public class LeaderboardsFragment extends Fragment {
     }
 
     FragmentLeaderboardsBinding binding;
+    FirebaseFirestore database;
+    User user;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,13 +47,27 @@ public class LeaderboardsFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentLeaderboardsBinding.inflate(inflater, container, false);
 
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        database = FirebaseFirestore.getInstance();
 
         final ArrayList<User> users = new ArrayList<>();
         final LeaderboardsAdapter adapter = new LeaderboardsAdapter(getContext(), users);
 
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        database.collection("users")
+                .document(FirebaseAuth.getInstance().getUid())
+                .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                user = documentSnapshot.toObject(User.class);
+                binding.textView5.setText(String.valueOf(user.getCoins()));
+
+                //binding.currentCoins.setText(user.getCoins() + "");
+
+            }
+        });
 
         database.collection("users")
                 .orderBy("coins", Query.Direction.DESCENDING).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

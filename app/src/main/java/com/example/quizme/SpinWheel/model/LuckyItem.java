@@ -1,8 +1,5 @@
 package com.example.quizme.SpinWheel.model;
 
-/**
- * Created by kiennguyen on 11/5/16.
- */
 
 public class LuckyItem {
     public String topText;

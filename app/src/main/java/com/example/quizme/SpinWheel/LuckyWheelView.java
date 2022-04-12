@@ -18,9 +18,7 @@ import com.example.quizme.SpinWheel.model.LuckyItem;
 
 import java.util.List;
 
-/**
- * Created by kiennguyen on 11/5/16.
- */
+
 
 public class LuckyWheelView extends RelativeLayout implements PielView.PieRotateListener {
     private int mBackgroundColor;

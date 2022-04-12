@@ -3,6 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/drawable/button_1.xml" value="0.158" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/drawable/button_2.xml" value="0.158" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/drawable/button_3.xml" value="0.158" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/drawable/button_4.xml" value="0.158" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/drawable/win_layout_dialog.xml" value="0.158" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.10235507246376811" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_admin_question_add.xml" value="0.2" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_forget_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_login.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_main.xml" value="0.12273550724637682" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_quiz.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_result.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_signup.xml" value="0.10235507246376811" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/activity_update_profile.xml" value="0.2" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/fragment_leaderboards.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/fragment_update_profile.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/fragment_wallet.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/item_category.xml" value="0.2" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/lose_layout_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/row_leaderboards.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/win_layout_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/menu/home_menu.xml" value="0.2" />
       </map>
     </option>

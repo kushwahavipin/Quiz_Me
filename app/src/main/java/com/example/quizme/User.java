@@ -1,17 +1,28 @@
 package com.example.quizme;
 
 public class User {
-    private String name, email, pass,profile, referCode;
+    private String name, email, pass,profile, referCode, phone;
     private long coins = 25;
+
+    public long getCoins() {
+        return coins;
+    }
+
+    public void setCoins(long coins) {
+        this.coins = coins;
+    }
 
     public User() {
     }
 
-    public User(String name, String email, String pass, String referCode) {
+
+    public User(String name, String email, String pass, String referCode, String phone) {
         this.name = name;
         this.email = email;
         this.pass = pass;
+        this.profile = profile;
         this.referCode = referCode;
+        this.phone = phone;
     }
 
     public String getName() {
@@ -38,6 +49,14 @@ public class User {
         this.pass = pass;
     }
 
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
     public String getReferCode() {
         return referCode;
     }
@@ -46,19 +65,11 @@ public class User {
         this.referCode = referCode;
     }
 
-    public long getCoins() {
-        return coins;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCoins(long coins) {
-        this.coins = coins;
-    }
-
-    public String getProfile() {
-        return profile;
-    }
-
-    public void setProfile(String profile) {
-        this.profile = profile;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

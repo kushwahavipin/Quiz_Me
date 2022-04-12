@@ -8,15 +8,24 @@ public class WithdrawRequest {
     private String userId;
     private String emailAddress;
     private String requestedBy;
+    private String requestPhone;
 
     public WithdrawRequest() {
 
     }
 
-    public WithdrawRequest(String userId, String emailAddress, String requestedBy) {
+    public WithdrawRequest(String userId, String emailAddress, String requestedBy,String requestPhone) {
         this.userId = userId;
         this.emailAddress = emailAddress;
         this.requestedBy = requestedBy;
+        this.requestPhone=requestPhone;
+    }
+
+    public String getRequestPhone(){
+        return requestPhone;
+    }
+    public void setRequestPhone(String requestPhone) {
+        this.requestPhone = requestPhone;
     }
 
     public String getUserId() {

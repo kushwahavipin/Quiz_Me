@@ -42,7 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         final String catId = getIntent().getStringExtra("catId");
 
         Random random = new Random();
-        final int rand = random.nextInt(12);
+        final int rand = random.nextInt(1000);
 
         database.collection("categories")
                 .document(catId)
@@ -78,7 +78,13 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-
+binding.quizBtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(QuizActivity.this, MainActivity.class));
+        finishAffinity();
+    }
+});
 
         resetTimer();
 
@@ -110,19 +116,21 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     void setNextQuestion() {
-        if(timer != null)
-            timer.cancel();
 
-        timer.start();
-        if(index < questions.size()) {
-            binding.questionCounter.setText(String.format("%d/%d", (index+1), questions.size()));
-            question = questions.get(index);
-            binding.question.setText(question.getQuestion());
-            binding.option1.setText(question.getOption1());
-            binding.option2.setText(question.getOption2());
-            binding.option3.setText(question.getOption3());
-            binding.option4.setText(question.getOption4());
-        }
+            if(timer != null)
+                timer.cancel();
+            timer.start();
+            if(index < questions.size()) {
+                binding.questionCounter.setText(String.format("%d/%d", (index+1), questions.size()));
+                question = questions.get(index);
+                binding.question.setText(question.getQuestion());
+                binding.option1.setText(question.getOption1());
+                binding.option2.setText(question.getOption2());
+                binding.option3.setText(question.getOption3());
+                binding.option4.setText(question.getOption4());
+            }
+
+
     }
 
     void checkAnswer(TextView textView) {
@@ -157,18 +165,23 @@ public class QuizActivity extends AppCompatActivity {
                 break;
             case R.id.nextBtn:
                 reset();
-                if(index <= questions.size()) {
-                    index++;
-                    setNextQuestion();
-                } else {
-                    Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-                    intent.putExtra("correct", correctAnswers);
-                    intent.putExtra("total", questions.size());
-                    startActivity(intent);
-                    //Toast.makeText(this, "Quiz Finished.", Toast.LENGTH_SHORT).show();
-                }
+
+                    if(index <= questions.size()) {
+                        index++;
+
+                        setNextQuestion();
+                    } else {
+                        Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent.putExtra("correct", correctAnswers);
+                        intent.putExtra("total", questions.size());
+                        startActivity(intent);
+                        //Toast.makeText(this, "Quiz Finished.", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 break;
         }
     }
+
 
 }

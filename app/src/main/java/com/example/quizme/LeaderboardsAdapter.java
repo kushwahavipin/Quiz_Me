@@ -36,7 +36,7 @@ public class LeaderboardsAdapter extends RecyclerView.Adapter<LeaderboardsAdapte
 
         holder.binding.name.setText(user.getName());
         holder.binding.coins.setText(String.valueOf(user.getCoins()));
-        holder.binding.index.setText(String.format("#%d", position+1));
+        holder.binding.index.setText(String.format("%d", position+1));
 
         Glide.with(context)
                 .load(user.getProfile())

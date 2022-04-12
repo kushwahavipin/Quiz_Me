@@ -6,19 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment" >
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profileImage"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/avatar"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
+    <RelativeLayout
+        android:id="@+id/updateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/avatar"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/profileImage"
+            android:layout_alignBottom="@+id/profileImage"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="-20dp"
+
+            app:srcCompat="@drawable/edit" />
+
+    </RelativeLayout>
+
+    <TextView
         android:id="@+id/emailBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,9 +58,10 @@
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+        app:layout_constraintTop_toBottomOf="@+id/nameBox"
+        />
 
-    <EditText
+    <TextView
         android:id="@+id/nameBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -54,38 +78,39 @@
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailBox" />
-
-    <EditText
-        android:id="@+id/passBox"
+        app:layout_constraintTop_toBottomOf="@+id/updateProfile"
+        />
+    <TextView
+        android:id="@+id/phoneBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/textbox"
-        android:drawableLeft="@drawable/password"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
         android:drawableTint="@color/colorPurple"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
+        android:hint="phone"
+        android:inputType="number"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameBox" />
+        app:layout_constraintTop_toBottomOf="@+id/emailBox"
+        />
 
     <Button
-        android:id="@+id/updateBtn"
+        android:id="@+id/signOut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_3"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/update_profile"
+        android:text="Sign out"
         android:textColor="@color/color_white"
-        app:layout_constraintEnd_toEndOf="@+id/passBox"
-        app:layout_constraintStart_toStartOf="@+id/passBox"
-        app:layout_constraintTop_toBottomOf="@+id/passBox" />
+        app:layout_constraintEnd_toEndOf="@+id/phoneBox"
+        app:layout_constraintStart_toStartOf="@+id/phoneBox"
+        app:layout_constraintTop_toBottomOf="@+id/phoneBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

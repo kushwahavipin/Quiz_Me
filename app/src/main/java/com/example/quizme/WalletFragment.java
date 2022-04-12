@@ -1,5 +1,6 @@
 package com.example.quizme;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -57,16 +58,25 @@ public class WalletFragment extends Fragment {
                 if(user.getCoins() > 50000) {
                     String uid = FirebaseAuth.getInstance().getUid();
                     String payPal = binding.emailBox.getText().toString();
-                    WithdrawRequest request = new WithdrawRequest(uid, payPal, user.getName());
-                    database
-                            .collection("withdraws")
-                            .document(uid)
-                            .set(request).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(getContext(), "Request sent successfully.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+                    WithdrawRequest request = new WithdrawRequest(uid, payPal, user.getName(),user.getPhone());
+                    if (!payPal.isEmpty()&&payPal.matches(emailPattern)&&payPal.length()>0){
+                        database
+                                .collection("withdrawal")
+                                .document(uid)
+                                .set(request).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getContext(), "Request sent successfully.", Toast.LENGTH_SHORT).show();
+                                binding.emailBox.getText().clear();
+
+                            }
+                        });
+                    }else {
+                        Toast.makeText(getContext(), "Please Enter Proper Email", Toast.LENGTH_SHORT).show();
+                    }
+
                 } else {
                     Toast.makeText(getContext(), "You need more coins to get withdraw.", Toast.LENGTH_SHORT).show();
                 }

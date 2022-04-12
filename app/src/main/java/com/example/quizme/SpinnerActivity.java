@@ -2,9 +2,14 @@ package com.example.quizme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizme.SpinWheel.LuckyWheelView;
@@ -22,12 +27,15 @@ import java.util.Random;
 public class SpinnerActivity extends AppCompatActivity {
 
     ActivitySpinnerBinding binding;
+    Dialog dialog;
+    long cash = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySpinnerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        dialog = new Dialog(this);
 
         List<LuckyItem> data = new ArrayList<>();
 
@@ -110,31 +118,39 @@ public class SpinnerActivity extends AppCompatActivity {
     }
 
     void updateCash(int index) {
-        long cash = 0;
+
         switch (index) {
             case 0:
                 cash = 5;
+                openWinDialog();
                 break;
             case 1:
                 cash = 10;
+                openWinDialog();
                 break;
             case 2:
                 cash = 15;
+                openWinDialog();
                 break;
             case 3:
                 cash = 20;
+                openWinDialog();
                 break;
             case 4:
                 cash = 25;
+                openWinDialog();
                 break;
             case 5:
                 cash = 30;
+                openWinDialog();
                 break;
             case 6:
                 cash = 35;
+                openWinDialog();
                 break;
             case 7:
                 cash = 0;
+                openLoseDialog();
                 break;
         }
 
@@ -146,10 +162,60 @@ public class SpinnerActivity extends AppCompatActivity {
                 .update("coins", FieldValue.increment(cash)).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(SpinnerActivity.this, "Coins added in account.", Toast.LENGTH_SHORT).show();
-                finish();
+//                Toast.makeText(SpinnerActivity.this, "Coins added in account.", Toast.LENGTH_SHORT).show();
+//                finish();
             }
         });
+    }
+
+    private void openLoseDialog() {
+        dialog.setContentView(R.layout.lose_layout_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCanceledOnTouchOutside(false);
+        ImageView imageViewClose = dialog.findViewById(R.id.imageViewClose);
+        Button btnOk = dialog.findViewById(R.id.btnOk);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                // Toast.makeText(SpinnerActivity.this, "", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void openWinDialog() {
+        dialog.setContentView(R.layout.win_layout_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCanceledOnTouchOutside(false);
+        String coin=String.valueOf(cash);
+
+        TextView textView=dialog.findViewById(R.id.coinScore);
+        textView.setText(coin+" Rewards added in Wallet");
+        ImageView imageViewClose = dialog.findViewById(R.id.imageViewClose);
+        Button btnOk = dialog.findViewById(R.id.btnOk);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                // Toast.makeText(SpinnerActivity.this, "", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
 }

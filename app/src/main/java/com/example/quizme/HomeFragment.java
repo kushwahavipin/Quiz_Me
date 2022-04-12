@@ -70,6 +70,7 @@ public class HomeFragment extends Fragment {
         binding.categoryList.setLayoutManager(new GridLayoutManager(getContext(),2));
         binding.categoryList.setAdapter(adapter);
 
+
         binding.spinwheel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +78,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        binding.shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         // Inflate the layout for this fragment
         return binding.getRoot();

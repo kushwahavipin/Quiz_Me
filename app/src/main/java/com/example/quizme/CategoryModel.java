@@ -3,6 +3,7 @@ package com.example.quizme;
 public class CategoryModel {
     private String categoryId, categoryName, categoryImage;
 
+
     public CategoryModel(String categoryId, String categoryName, String categoryImage) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
