@@ -12,6 +12,7 @@ public class CategoryModel {
 
     public CategoryModel() {}
 
+
     public String getCategoryId() {
         return categoryId;
     }

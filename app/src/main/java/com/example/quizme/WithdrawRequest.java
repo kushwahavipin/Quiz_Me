@@ -9,18 +9,26 @@ public class WithdrawRequest {
     private String emailAddress;
     private String requestedBy;
     private String requestPhone;
+    long coins;
 
     public WithdrawRequest() {
 
     }
 
-    public WithdrawRequest(String userId, String emailAddress, String requestedBy,String requestPhone) {
+    public WithdrawRequest(String userId, String emailAddress, String requestedBy,String requestPhone,long coins) {
         this.userId = userId;
         this.emailAddress = emailAddress;
         this.requestedBy = requestedBy;
         this.requestPhone=requestPhone;
+        this.coins=coins;
+    }
+    public long getCoins() {
+        return coins;
     }
 
+    public void setCoins(long coins) {
+        this.coins = coins;
+    }
     public String getRequestPhone(){
         return requestPhone;
     }

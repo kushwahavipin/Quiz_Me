@@ -54,7 +54,19 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/background" />
-
+            <EditText
+                android:id="@+id/index"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textbox"
+                android:drawableLeft="@drawable/ic_baseline_question_answer_24"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/colorPurple"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Enter Number"
+                android:padding="15dp" />
             <EditText
                 android:id="@+id/question"
                 android:layout_width="match_parent"
@@ -144,18 +156,18 @@
                 android:background="@drawable/button_1"
                 android:text="Submit"
                 android:textColor="@color/color_white" />
-
-
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/textView3"
+            <Button
+                android:id="@+id/showQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="By signing up you agree to our privacy policy and terms and conditions."
-                android:textSize="10sp" />
+                android:background="@drawable/button_2"
+                android:text="Show Question"
+                android:textColor="@color/color_white" />
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

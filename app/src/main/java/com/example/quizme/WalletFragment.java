@@ -60,7 +60,8 @@ public class WalletFragment extends Fragment {
                     String payPal = binding.emailBox.getText().toString();
                     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-                    WithdrawRequest request = new WithdrawRequest(uid, payPal, user.getName(),user.getPhone());
+
+                    WithdrawRequest request = new WithdrawRequest(uid, payPal, user.getName(),user.getPhone(),user.getCoins());
                     if (!payPal.isEmpty()&&payPal.matches(emailPattern)&&payPal.length()>0){
                         database
                                 .collection("withdrawal")

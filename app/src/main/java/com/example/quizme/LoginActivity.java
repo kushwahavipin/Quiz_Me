@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.quizme.Admin.AdminDashBoard;
+import com.example.quizme.Admin.AdminHomeScreenActivity;
 import com.example.quizme.databinding.ActivityLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                     binding.passwordBox.setError("Please Enter Password");
                 }else {
                     if (email.equals("bit14200@gmail.com")&&pass.equals("7081493932")){
-                        startActivity(new Intent(LoginActivity.this, AdminDashBoard.class));
+                        startActivity(new Intent(LoginActivity.this, AdminHomeScreenActivity.class));
                         finish();
                     }else{
                         dialog.show();

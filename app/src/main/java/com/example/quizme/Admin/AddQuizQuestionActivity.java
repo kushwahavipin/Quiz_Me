@@ -20,7 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class AdminDashBoard extends AppCompatActivity {
+public class AddQuizQuestionActivity extends AppCompatActivity {
     FirebaseFirestore database;
     RecyclerView categoryList;
 

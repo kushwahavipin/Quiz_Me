@@ -27,6 +27,25 @@
         <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/row_leaderboards.xml" value="0.16485507246376813" />
         <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/layout/win_layout_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/singh/AndroidStudioProjects/QuizMe/app/src/main/res/menu/home_menu.xml" value="0.2" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/drawable/background.xml" value="0.1785" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1045" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/drawable/textbox.xml" value="0.126" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_add_quiz_category.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_admin_home_screen.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_admin_question_add.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_login.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_quiz.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_show_question.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_show_request.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_signup.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/activity_update_profile.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/fragment_leaderboards.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/fragment_wallet.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/item_category.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/item_payment_request.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/item_show_question.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/user/StudioProjects/QuizMe/app/src/main/res/layout/row_leaderboards.xml" value="0.16983695652173914" />
       </map>
     </option>
   </component>

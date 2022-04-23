@@ -1,6 +1,7 @@
 package com.example.quizme.Admin;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,18 +17,26 @@ import com.example.quizme.MainActivity;
 import com.example.quizme.Question;
 import com.example.quizme.R;
 import com.example.quizme.SignupActivity;
+import com.example.quizme.User;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class AdminQuestionAdd extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     ProgressDialog dialog;
-    EditText question1, option11, option21, option31, option41, answer1, index;
-    Button submit;
-    String str;
+    EditText question1, option11, option21, option31, option41, answer1, index1;
+    Button submit,showQuestion;
+    String str,subjectName;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,8 @@ public class AdminQuestionAdd extends AppCompatActivity {
 
         dialog = new ProgressDialog(this);
         dialog.setMessage("We're creating new question...");
+        intent = getIntent();
+        str = intent.getStringExtra("catId");
 
         question1 = findViewById(R.id.question);
         option11 = findViewById(R.id.option_1);
@@ -45,12 +56,27 @@ public class AdminQuestionAdd extends AppCompatActivity {
         option41 = findViewById(R.id.option_4);
         answer1 = findViewById(R.id.answer);
         submit = findViewById(R.id.createQuestion);
+        showQuestion = findViewById(R.id.showQuestion);
+        index1 = findViewById(R.id.index);
 
-        Intent intent = getIntent();
-        String subjectName = intent.getStringExtra("categoryName");
+
+
+        showQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(AdminQuestionAdd.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(AdminQuestionAdd.this, ShowQuestionActivity.class));
+            }
+        });
+
+        subjectName = intent.getStringExtra("categoryName");
         Toolbar toolbar;
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(subjectName);
+
+
+
+
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -62,9 +88,10 @@ public class AdminQuestionAdd extends AppCompatActivity {
                 String option3 = option31.getText().toString();
                 String option4 = option41.getText().toString();
                 String answer = answer1.getText().toString();
-                long index = 0;
-                Intent intent = getIntent();
-                str = intent.getStringExtra("catId");
+                long index = Long.parseLong(index1.getText().toString());
+
+
+
 
 
                 if (question.isEmpty() || option1.isEmpty() || option2.isEmpty() || option3.isEmpty() || option4.isEmpty() || answer.isEmpty()) {
@@ -94,5 +121,23 @@ public class AdminQuestionAdd extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        firebaseFirestore.collection(subjectName).document(str).collection("questions")
+                .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                for (DocumentSnapshot snapshot:queryDocumentSnapshots){
+                    Question question=snapshot.toObject(Question.class);
+                    assert question != null;
+                    index1.setText(String.valueOf(question.getIndex()));
+                    Toast.makeText(AdminQuestionAdd.this, "Data Not Get", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminQuestionAdd.this, (int) question.getIndex(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

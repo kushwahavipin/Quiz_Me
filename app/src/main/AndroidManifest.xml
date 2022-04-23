@@ -13,6 +13,20 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Admin.ShowQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ShowRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddQuizCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminHomeScreenActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".ForgetPasswordActivity"
             android:exported="false" />
         <activity
@@ -22,8 +36,8 @@
             android:name=".UpdateProfile"
             android:exported="false" />
         <activity
-            android:name=".Admin.AdminDashBoard"
-            android:exported="true"></activity>
+            android:name=".Admin.AddQuizQuestionActivity"
+            android:exported="true" />
         <activity android:name=".SpinnerActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".QuizActivity" />
@@ -39,7 +53,7 @@
         </activity>
         <activity android:name=".MainActivity" />
 
-        <meta-data
+        <meta-data 
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>

@@ -24,7 +24,7 @@ public class QuizActivity extends AppCompatActivity {
     ActivityQuizBinding binding;
 
     ArrayList<Question> questions;
-    int index = 0;
+    int index =0;
     Question question;
     CountDownTimer timer;
     FirebaseFirestore database;

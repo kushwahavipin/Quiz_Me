@@ -7,14 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.quizme.CategoryModel;
+import com.example.quizme.Question;
 import com.example.quizme.QuizActivity;
 import com.example.quizme.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -49,6 +56,7 @@ public class AdminCategoryAdapter extends RecyclerView.Adapter<AdminCategoryAdap
                 Intent intent = new Intent(context, AdminQuestionAdd.class);
                 intent.putExtra("catId", model.getCategoryId());
                 intent.putExtra("categoryName", model.getCategoryName());
+
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
