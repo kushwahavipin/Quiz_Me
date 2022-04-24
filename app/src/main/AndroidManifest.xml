@@ -6,44 +6,40 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_main_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_main_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".Admin.ShowQuestionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.ShowRequestActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.AddQuizCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.AdminHomeScreenActivity"
-            android:exported="true">
 
-        </activity>
-        <activity
-            android:name=".ForgetPasswordActivity"
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <activity android:name=".Admin.ShowQuestionActivity"
             android:exported="false" />
-        <activity
-            android:name=".Admin.AdminQuestionAdd"
+        <activity android:name=".Admin.ShowRequestActivity"
             android:exported="false" />
-        <activity
-            android:name=".UpdateProfile"
+        <activity android:name=".Admin.AddQuizCategoryActivity"
             android:exported="false" />
-        <activity
-            android:name=".Admin.AddQuizQuestionActivity"
-            android:exported="true" />
-        <activity android:name=".SpinnerActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".QuizActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity
-            android:name=".LoginActivity"
+        <activity android:name=".Admin.AdminHomeScreenActivity"
+            android:exported="false"/>
+        <activity android:name=".ForgetPasswordActivity"
+            android:exported="false" />
+        <activity android:name=".Admin.AdminQuestionAdd"
+            android:exported="false" />
+        <activity android:name=".UpdateProfile"
+            android:exported="false" />
+        <activity android:name=".Admin.AddQuizQuestionActivity"
+            android:exported="false" />
+        <activity android:name=".SpinnerActivity"
+            android:exported="false"/>
+        <activity android:name=".ResultActivity"
+            android:exported="false"/>
+        <activity android:name=".QuizActivity"
+            android:exported="false"/>
+        <activity android:name=".SignupActivity"
+            android:exported="false"/>
+        <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +47,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:exported="false"/>
 
         <meta-data 
             android:name="preloaded_fonts"
