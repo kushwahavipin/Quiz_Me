@@ -7,7 +7,7 @@ android {
         viewBinding true
     }
     defaultConfig {
-        applicationId "com.example.quizme"
+        applicationId "com.erinfa.quizme"
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.quizme">
+    package="com.erinfa.quizme">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,33 +13,31 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
-        <activity android:name=".Admin.ShowQuestionActivity"
+        <activity android:name="com.erinfa.quizme.Admin.ShowQuestionActivity"
             android:exported="false" />
-        <activity android:name=".Admin.ShowRequestActivity"
+        <activity android:name="com.erinfa.quizme.Admin.ShowRequestActivity"
             android:exported="false" />
-        <activity android:name=".Admin.AddQuizCategoryActivity"
+        <activity android:name="com.erinfa.quizme.Admin.AddQuizCategoryActivity"
             android:exported="false" />
-        <activity android:name=".Admin.AdminHomeScreenActivity"
+        <activity android:name="com.erinfa.quizme.Admin.AdminHomeScreenActivity"
             android:exported="false"/>
-        <activity android:name=".ForgetPasswordActivity"
+        <activity android:name="com.erinfa.quizme.ForgetPasswordActivity"
             android:exported="false" />
-        <activity android:name=".Admin.AdminQuestionAdd"
+        <activity android:name="com.erinfa.quizme.Admin.AdminQuestionAdd"
             android:exported="false" />
-        <activity android:name=".UpdateProfile"
+        <activity android:name="com.erinfa.quizme.UpdateProfile"
             android:exported="false" />
-        <activity android:name=".Admin.AddQuizQuestionActivity"
+        <activity android:name="com.erinfa.quizme.Admin.AddQuizQuestionActivity"
             android:exported="false" />
-        <activity android:name=".SpinnerActivity"
+        <activity android:name="com.erinfa.quizme.SpinnerActivity"
             android:exported="false"/>
-        <activity android:name=".ResultActivity"
+        <activity android:name="com.erinfa.quizme.ResultActivity"
             android:exported="false"/>
-        <activity android:name=".QuizActivity"
+        <activity android:name="com.erinfa.quizme.QuizActivity"
             android:exported="false"/>
-        <activity android:name=".SignupActivity"
+        <activity android:name="com.erinfa.quizme.SignupActivity"
             android:exported="false"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name="com.erinfa.quizme.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name="com.erinfa.quizme.MainActivity"
             android:exported="false"/>
 
         <meta-data 

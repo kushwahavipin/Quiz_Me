@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/coin_treasure" />
 
-    <com.example.quizme.SpinWheel.LuckyWheelView
+    <com.erinfa.quizme.SpinWheel.LuckyWheelView
         android:id="@+id/wheelview"
         android:layout_width="280dp"
         android:layout_height="280dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.13999999"></com.example.quizme.SpinWheel.LuckyWheelView>
+        app:layout_constraintVertical_bias="0.13999999"></com.erinfa.quizme.SpinWheel.LuckyWheelView>
 
     <ImageView
         android:id="@+id/imageView10"
