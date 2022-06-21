@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.Loader;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AddQuizCategoryActivity extends AppCompatActivity {
     EditText name;
     CircleImageView profile;
-    Button quit, update;
+    Button showBtn, update;
     RelativeLayout uploadImage;
 
     static final int PICK_IMAGE = 1;
@@ -58,7 +59,7 @@ public class AddQuizCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_quiz_category);
         name = findViewById(R.id.nameBox);
         profile = findViewById(R.id.profileImage);
-        quit = findViewById(R.id.quitBtn);
+        showBtn = findViewById(R.id.showBtn);
         update = findViewById(R.id.updateBtn);
         uploadImage = findViewById(R.id.uploadImageVIew);
 
@@ -101,8 +102,9 @@ public class AddQuizCategoryActivity extends AppCompatActivity {
 
                                             //uploadImage();
                                             dialog.dismiss();
-                                            startActivity(new Intent(AddQuizCategoryActivity.this, AddQuizCategoryActivity.class));
-                                            finish();
+                                            name.setText("");
+//                                            startActivity(new Intent(AddQuizCategoryActivity.this, AddQuizCategoryActivity.class));
+//                                            finish();
                                         } else {
                                             Toast.makeText(AddQuizCategoryActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                         }
@@ -123,6 +125,14 @@ public class AddQuizCategoryActivity extends AppCompatActivity {
                     dialog.dismiss();
                     Toast.makeText(AddQuizCategoryActivity.this, "Enter Title", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        showBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AddQuizCategoryActivity.this,ShowAddCategory.class);
+                startActivity(intent);
             }
         });
 
@@ -148,6 +158,8 @@ public class AddQuizCategoryActivity extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     downloadUrl = String.valueOf(uri);
                                     loadImageUrl();
+
+                                    Log.d("URL",downloadUrl);
                                     //Toast.makeText(UpdateProfile.this, downloadUrl, Toast.LENGTH_SHORT).show();
                                     // startActivity(getIntent());
 
@@ -169,6 +181,8 @@ public class AddQuizCategoryActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                        // Toast.makeText(AddQuizCategoryActivity.this, categoryId, Toast.LENGTH_SHORT).show();
+
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override

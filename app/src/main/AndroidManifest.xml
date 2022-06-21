@@ -12,32 +12,47 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name="com.erinfa.quizme.Admin.ShowQuestionActivity"
+        <activity
+            android:name=".ShowAddCategory"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.Admin.ShowRequestActivity"
+        <activity
+            android:name=".ShowQuestionActivity"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.Admin.AddQuizCategoryActivity"
+        <activity
+            android:name=".ShowRequestActivity"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.Admin.AdminHomeScreenActivity"
-            android:exported="false"/>
-        <activity android:name="com.erinfa.quizme.ForgetPasswordActivity"
+        <activity
+            android:name=".AddQuizCategoryActivity"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.Admin.AdminQuestionAdd"
+        <activity
+            android:name=".AdminHomeScreenActivity"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.UpdateProfile"
+        <activity
+            android:name="com.erinfa.quizme.ForgetPasswordActivity"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.Admin.AddQuizQuestionActivity"
+        <activity
+            android:name=".AdminQuestionAdd"
             android:exported="false" />
-        <activity android:name="com.erinfa.quizme.SpinnerActivity"
-            android:exported="false"/>
-        <activity android:name="com.erinfa.quizme.ResultActivity"
-            android:exported="false"/>
-        <activity android:name="com.erinfa.quizme.QuizActivity"
-            android:exported="false"/>
-        <activity android:name="com.erinfa.quizme.SignupActivity"
-            android:exported="false"/>
-        <activity android:name="com.erinfa.quizme.LoginActivity"
+        <activity
+            android:name="com.erinfa.quizme.UpdateProfile"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuizQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.erinfa.quizme.SpinnerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.erinfa.quizme.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.erinfa.quizme.QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.erinfa.quizme.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.erinfa.quizme.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,10 +60,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.erinfa.quizme.MainActivity"
-            android:exported="false"/>
+        <activity
+            android:name="com.erinfa.quizme.MainActivity"
+            android:exported="false" />
 
-        <meta-data 
+        <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>

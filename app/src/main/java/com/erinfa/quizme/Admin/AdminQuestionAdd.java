@@ -101,8 +101,13 @@ public class AdminQuestionAdd extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<DocumentReference> task) {
                                     if (task.isSuccessful()) {
                                         dialog.dismiss();
-                                        startActivity(new Intent(AdminQuestionAdd.this, AdminQuestionAdd.class));
-                                        finish();
+                                        question1.setText("");
+                                        option11.setText("");
+                                        option21.setText("");
+                                        option31.setText("");
+                                        option41.setText("");
+                                        answer1.setText("");
+                                       // startActivity(new Intent(AdminQuestionAdd.this, AdminQuestionAdd.class));
                                     } else {
                                         Toast.makeText(AdminQuestionAdd.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                     }

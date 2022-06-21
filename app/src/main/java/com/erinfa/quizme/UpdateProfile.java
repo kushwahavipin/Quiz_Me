@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -121,41 +122,22 @@ public class UpdateProfile extends AppCompatActivity {
             public void onClick(View view) {
                 dialog.show();
                 String newName = name.getText().toString();
-                if (!newName.equals(nameResult)||newName.equals(nameResult)) {
-                    firebaseFirestore.collection("users").document(currentId)
-                            .update("name", newName).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            dialog.dismiss();
-                            Toast.makeText(UpdateProfile.this, "Update", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            dialog.dismiss();
-                            Toast.makeText(UpdateProfile.this, "Some things went wrong", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                firebaseFirestore.collection("users").document(currentId)
+                        .update("name", newName).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dialog.dismiss();
+                        Toast.makeText(UpdateProfile.this, "Update", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        dialog.dismiss();
+                        Toast.makeText(UpdateProfile.this, "Some things went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
-                } else if (!phone.equals(phoneResult)||phone.equals(phoneResult)) {
-                    String newPhone = phone.getText().toString();
-                    firebaseFirestore.collection("users").document(currentId)
-                            .update("phone", newPhone).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            dialog.dismiss();
-                            Toast.makeText(UpdateProfile.this, "Update", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            dialog.dismiss();
-                            Toast.makeText(UpdateProfile.this, "Some things went wrong", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-                }
                 if (!(bitmap ==null)) {
                     uploadImage();
 
@@ -183,6 +165,7 @@ public class UpdateProfile extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     downloadUrl = String.valueOf(uri);
+                                    Log.d("URL",downloadUrl);
                                     loadImageUrl();
                                     //Toast.makeText(UpdateProfile.this, downloadUrl, Toast.LENGTH_SHORT).show();
                                    // startActivity(getIntent());
