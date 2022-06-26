@@ -28,31 +28,31 @@
             android:name=".AdminHomeScreenActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.ForgetPasswordActivity"
+            android:name="com.erinfa.quizme.UI.Auth.ForgetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".AdminQuestionAdd"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.UpdateProfile"
+            android:name="com.erinfa.quizme.UI.Profile.UpdateProfile"
             android:exported="false" />
         <activity
             android:name=".AddQuizQuestionActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.SpinnerActivity"
+            android:name="com.erinfa.quizme.UI.Spinner.SpinnerActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.ResultActivity"
+            android:name="com.erinfa.quizme.UI.Result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.QuizActivity"
+            android:name="com.erinfa.quizme.UI.Question.QuizActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.SignupActivity"
+            android:name="com.erinfa.quizme.UI.Auth.SignupActivity"
             android:exported="false" />
         <activity
-            android:name="com.erinfa.quizme.LoginActivity"
+            android:name="com.erinfa.quizme.UI.Auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.erinfa.quizme.MainActivity"
+            android:name="com.erinfa.quizme.UI.MainActivity"
             android:exported="false" />
 
         <meta-data

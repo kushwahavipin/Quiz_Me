@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment" >
+    tools:context=".UI.Profile.ProfileFragment" >
 
     <RelativeLayout
         android:id="@+id/updateProfile"
@@ -99,18 +99,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailBox"
         />
-
-    <Button
+    <TextView
         android:id="@+id/signOut"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_3"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Sign out"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_1"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:text="SIGN OUT"
         android:textColor="@color/color_white"
-        app:layout_constraintEnd_toEndOf="@+id/phoneBox"
-        app:layout_constraintStart_toStartOf="@+id/phoneBox"
-        app:layout_constraintTop_toBottomOf="@+id/phoneBox" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/shareBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneBox"
+        app:drawableLeftCompat="@drawable/ic_baseline_login_24"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/shareBtn"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_2"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:text="Invite Friends"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"
+        app:drawableTint="@color/color_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/signOut"
+        app:layout_constraintTop_toBottomOf="@+id/phoneBox"
+        app:drawableLeftCompat="@drawable/share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
