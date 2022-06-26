@@ -22,7 +22,7 @@ public class QuizActivity extends AppCompatActivity {
     ActivityQuizBinding binding;
 
     ArrayList<Question> questions;
-    int index =0;
+    int index =1;
     Question question;
     CountDownTimer timer;
     FirebaseFirestore database;
@@ -47,7 +47,7 @@ public class QuizActivity extends AppCompatActivity {
                 .collection("questions")
                 .whereGreaterThanOrEqualTo("index", rand)
                 .orderBy("index")
-                .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                .limit(7).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if(queryDocumentSnapshots.getDocuments().size() < 5) {
@@ -56,7 +56,7 @@ public class QuizActivity extends AppCompatActivity {
                             .collection("questions")
                             .whereLessThanOrEqualTo("index", rand)
                             .orderBy("index")
-                            .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            .limit(7).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                         @Override
                         public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                                 for(DocumentSnapshot snapshot : queryDocumentSnapshots) {
@@ -119,7 +119,7 @@ binding.quizBtn.setOnClickListener(new View.OnClickListener() {
                 timer.cancel();
             timer.start();
             if(index < questions.size()) {
-                binding.questionCounter.setText(String.format("%d/%d", (index+1), questions.size()));
+                binding.questionCounter.setText(String.format("%d/%d", (index+0), questions.size()));
                 question = questions.get(index);
                 binding.question.setText(question.getQuestion());
                 binding.option1.setText(question.getOption1());
@@ -164,7 +164,7 @@ binding.quizBtn.setOnClickListener(new View.OnClickListener() {
             case R.id.nextBtn:
                 reset();
 
-                    if(index <= questions.size()) {
+                    if(index < questions.size()) {
                         index++;
 
                         setNextQuestion();
