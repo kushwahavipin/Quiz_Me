@@ -13,31 +13,31 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ShowAddCategory"
+            android:name=".Admin.Category.ShowAddCategory"
             android:exported="false" />
         <activity
-            android:name=".ShowQuestionActivity"
+            android:name=".Admin.Question.ShowQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".ShowRequestActivity"
+            android:name=".Admin.RequestWithdraw.ShowRequestActivity"
             android:exported="false" />
         <activity
-            android:name=".AddQuizCategoryActivity"
+            android:name=".Admin.Category.AddQuizCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminHomeScreenActivity"
+            android:name=".Admin.Home.AdminHomeScreenActivity"
             android:exported="false" />
         <activity
             android:name="com.erinfa.quizme.UI.Auth.ForgetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminQuestionAdd"
+            android:name=".Admin.Question.AdminQuestionAdd"
             android:exported="false" />
         <activity
             android:name="com.erinfa.quizme.UI.Profile.UpdateProfile"
             android:exported="false" />
         <activity
-            android:name=".AddQuizQuestionActivity"
+            android:name=".Admin.Question.AddQuizQuestionActivity"
             android:exported="false" />
         <activity
             android:name="com.erinfa.quizme.UI.Spinner.SpinnerActivity"

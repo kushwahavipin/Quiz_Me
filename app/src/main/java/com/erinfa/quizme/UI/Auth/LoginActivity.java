@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dialog.show();
                 String email, pass;
                 email = binding.emailBox.getText().toString();
                 pass = binding.passwordBox.getText().toString();
@@ -58,10 +59,9 @@ public class LoginActivity extends AppCompatActivity {
                     binding.passwordBox.setError("Please Enter Password");
                 }else {
                     if (email.equals("bit14200@gmail.com")&&pass.equals("7081493932")){
-                        startActivity(new Intent(LoginActivity.this, AdminHomeScreenActivity.class));
+                        startActivity(new Intent(LoginActivity.this,AdminHomeScreenActivity.class));
                         finish();
                     }else{
-                        dialog.show();
 
                         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
